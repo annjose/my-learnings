@@ -1,0 +1,20 @@
+mutation UpdateServiceItem($clientMutationId: String!, $entityVersion: String!, $itemId: String!, $itemName: String!, $salesPrice: String!, $salesDesc: String) {
+  updateItems_ServiceItem(input: {
+    clientMutationId: $clientMutationId,
+    itemsServiceItem: {
+      id: $itemId
+      entityVersion: $entityVersion
+      name: $itemName
+      salesDesc: $salesDesc
+      salesPrice: $salesPrice
+    }
+  }) {
+    itemsServiceItem {
+      id
+      entityVersion
+      name
+      salesDesc
+      salesPrice
+    }
+  }
+}

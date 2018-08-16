@@ -1,0 +1,15 @@
+query GetServiceItems{
+  company{
+    serviceItems(filterBy: "deleted=false") {
+      edges {
+        node {
+          id
+          entityVersion
+          name
+          salesDesc
+          salesPrice
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+query AllPosts {
+  posts {
+    ...PostDetails
+  }
+}
+
+mutation UpvotePost($postId: Int!) {
+  upvotePost(postId: $postId) {
+    ...PostDetails
+  }
+}
+
+fragment PostDetails on Post {
+  id
+  title
+  votes
+  author {
+    firstName
+    lastName
+  }
+}

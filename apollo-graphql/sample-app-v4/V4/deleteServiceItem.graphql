@@ -1,0 +1,16 @@
+mutation DeleteServiceItem($clientMutationId: String!, $entityVersion: String!, $itemId: String!) {
+  updateItems_Item(input: {
+    clientMutationId: $clientMutationId
+    itemsItem: {
+      id: $itemId
+      entityVersion: $entityVersion
+      deleted: true
+    }
+  }) {
+    clientMutationId
+    itemsItem {
+      id
+      deleted
+    }
+  }
+}

@@ -1,0 +1,42 @@
+mutation UpdateInvoice($clientMutationId: String!, $entityVersion: String!, $txnId: String!, $txnDate: String!, $dueDate: String!, $contactId: String!, $description: String!, $amount: String!, $invoiceNumber: String!) {
+  updateTransactions_Transaction(input: {
+    clientMutationId: $clientMutationId,
+    transactionsTransaction: {
+      id: $txnId,
+      entityVersion: $entityVersion,
+      type: SALE_INVOICE,
+      header: {
+        txnDate: $txnDate,
+        referenceNumber: $invoiceNumber,
+        contact: {id: $contactId}
+      },
+      qboAppData: {fullReadPriorSavedTxn: true},
+      traits:{
+        balance:{
+          dueDate: $dueDate,
+        }
+      }
+      lines: {
+        itemLines: {
+          description: $description,
+          amount: $amount
+        }
+      }
+    }}) {
+    clientMutationId
+    transactionsTransaction {
+        id
+        entityVersion
+        header {
+            referenceNumber
+            txnDate
+            amount
+            txnStatus
+            contact {
+                id
+                displayName
+            }
+        }
+    }
+  }
+}

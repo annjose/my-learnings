@@ -1,0 +1,16 @@
+mutation DeleteInvoice($clientMutationId: String!, $entityVersion: String!, $txnId: String!) {
+  updateTransactions_Transaction(input: {
+    clientMutationId: $clientMutationId,
+    transactionsTransaction: {
+      id: $txnId,
+      entityVersion: $entityVersion,
+      deleted: true,
+    }
+}) {
+    clientMutationId
+  	transactionsTransaction {
+      id
+      deleted
+    }
+  }
+}

@@ -1,0 +1,98 @@
+query GetInvoice($id: ID!) {
+    node(id: $id) {
+        ... on Transactions_Transaction {
+            id
+            entityVersion
+            meta {
+                created
+                updated
+            }
+            lines {
+                itemLines {
+                    edges {
+                        node {
+                            id
+                            amount
+                            description
+                            traits {
+                                item {
+                                    rate
+                                    serviceDate
+                                    quantity
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            traits {
+                delivery {
+                    contactMessage #message
+                }
+                tracking {
+                    action
+                    trackerStatusInfo { #array of status
+                        status
+                        callToAction
+                        statusUpdatedTime
+                    }
+                }
+                balance {
+                    balance
+                    amountPaid
+                    dueDate
+                }
+                tax {
+                    totalTaxAmount
+                    totalTaxableAmount
+                }
+            }
+            header {
+                txnDate
+                amount
+                txnStatus
+                label
+                referenceNumber
+                currencyInfo {
+                    symbol
+                    currency
+                    code
+                }
+                contact {
+                    id
+                    displayName
+                    person {
+                        middleName
+                        dateOfBirth
+                        givenName
+                        familyName
+                    }
+                    contactMethods {
+                        emails {
+                            primary
+                            emailAddress
+                            active
+                        }
+                        addresses {
+                            freeFormAddressLine
+                            deliverableStatus
+                            addressFormatFormula
+                            verificationStatus
+                            addressId
+                            addressComponents {
+                                name
+                                value
+                            }
+                            verificationDate
+                            primary
+                            active
+                            formattedAddress
+                            geocodeStatus
+                            types
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

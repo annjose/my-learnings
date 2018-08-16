@@ -1,0 +1,51 @@
+mutation UpdateCompanyInfoFromSettings($id: String!, $clientMutationId: String!, $entityVersion: String!, $displayName: String!, $logoUrl: String, $email: String, $phone: String, $address: String, $businessNumber: String) {
+  updateCompany_Settings(input: {
+    clientMutationId: $clientMutationId,
+    companySettings: {
+      id: $id,
+      qboAppData: {
+        companyInfoAppData: {
+          entityVersion: $entityVersion,
+          companyName: $displayName,
+          govtUID: $businessNumber, #business id?
+          companyLogoURL: $logoUrl,
+          companyEmail: $email,
+          companyPhone: $phone,
+          companyAddress: {
+            primary: true,
+            freeFormAddressLine: $address
+          }
+        }
+      }
+    }
+  }) {
+    companySettings {
+	  id
+      qboAppData {
+        companyInfoAppData {
+      		entityVersion
+          companyName
+          govtUID #business id?
+          companyLogoURL
+          companyEmail
+          companyPhone
+          companyAddress {
+          	addressComponents {
+            	name
+            	value
+            }
+          }
+          regionTaxOfficeName #subdivision?
+          taxIdentifierId
+          taxIdentifierType
+          taxIdentifierValue
+        }
+      }
+      localizationPrefs {
+        region
+        language
+        regionCode
+      }
+    }
+  }
+}

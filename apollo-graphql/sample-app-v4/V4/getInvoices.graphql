@@ -1,0 +1,43 @@
+query GetInvoices {
+  company {
+    transactions(filterBy: "type='SALE_INVOICE'") {
+      edges {
+        node {
+          id
+          entityVersion
+          type
+          header {
+            referenceNumber
+            txnDate
+            contact {
+              id
+              displayName
+            }
+            currencyInfo {
+              symbol
+              currency
+              code
+            }
+            amount
+            txnStatus
+          }
+          traits {
+            tracking {
+              action
+              trackerStatusInfo {
+                status
+                callToAction
+                statusUpdatedTime
+              }
+            }
+            balance {
+              balance
+              amountPaid
+              dueDate
+            }
+          }
+        }
+      }
+    }
+  }
+}

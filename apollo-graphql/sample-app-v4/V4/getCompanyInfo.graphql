@@ -1,0 +1,36 @@
+
+# This query isn't currently working, once the v4 implementation is done it will replace the company info that is being returned from settings/qboAppInfo
+query GetCompanyInfo{
+    company {
+      companyInfo {
+        companyName
+        logo
+        contactMethods {
+          emails {
+            emailAddress
+            primary
+            active
+          }
+          addresses {
+            formattedAddress
+            addressComponents {
+              name
+              value
+            }
+            primary
+            active
+          }
+          telephones {
+            number
+            primary
+            active
+          }
+        }
+        governmentIds {
+          governmentId #business id?
+          regionOfIssuingAuthority #subdivision?
+          countryOfIssuingAuthority #subdivision?
+        }
+      }
+    }
+}

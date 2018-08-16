@@ -1,0 +1,119 @@
+mutation CreateInvoice($clientMutationId: String!, $txnDate: String!, $dueDate: String!, $contactId: String!, $description: String!, $amount: String!, $contactMessage:String) {
+  createTransactions_Transaction(input: {
+    clientMutationId: $clientMutationId,
+    transactionsTransaction: {
+      type: SALE_INVOICE,
+      header: {
+        txnDate: $txnDate,
+        contact: {id: $contactId}
+      },
+      qboAppData: {fullReadPriorSavedTxn: true},
+      traits:{
+        balance:{
+            dueDate: $dueDate,
+        }
+        delivery:{
+            contactMessage: $contactMessage
+        }
+      }
+      lines: {
+        itemLines: {
+          description: $description,
+          amount: $amount
+        }
+      }
+    }
+  }) {
+    transactionsTransactionEdge {
+      node {
+       id
+            entityVersion
+            meta {
+                created
+                updated
+            }
+            lines {
+                itemLines {
+                    edges {
+                        node {
+                            id
+                            amount
+                            description
+                            traits {
+                                item {
+                                    rate
+                                    serviceDate
+                                    quantity
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            traits {
+                delivery {
+                    contactMessage #message
+                }
+                tracking {
+                    action
+                    trackerStatusInfo { #array of status
+                        status
+                        callToAction
+                        statusUpdatedTime
+                    }
+                }
+                balance {
+                    balance
+                    amountPaid
+                    dueDate
+                }
+                tax {
+                    totalTaxAmount
+                    totalTaxableAmount
+                }
+            }
+            header {
+                txnDate
+                amount
+                txnStatus
+                label
+                referenceNumber
+                currencyInfo {
+                    symbol
+                    currency
+                    code
+                }
+                contact {
+                    id
+                    displayName
+                    person {
+                        middleName
+                        dateOfBirth
+                        givenName
+                        familyName
+                    }
+                    contactMethods {
+                        addresses {
+                            freeFormAddressLine
+                            deliverableStatus
+                            addressFormatFormula
+                            verificationStatus
+                            addressId
+                            addressComponents {
+                                name
+                                value
+                            }
+                            verificationDate
+                            primary
+                            active
+                            formattedAddress
+                            geocodeStatus
+                            types
+                        }
+                    }
+                }
+            }
+      }
+    }
+  }
+}

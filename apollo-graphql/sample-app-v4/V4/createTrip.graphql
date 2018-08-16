@@ -1,0 +1,138 @@
+mutation CreateTrip($clientMutationId: String!, $startDateTime: String!, $endDateTime: String!, $startLatitude: String, $startLongitude: String, $startAddressLine1: String, $startAddressLine2: String, $startCity: String, $startState: String, $startPostalCode: String, $startCountry: String, $endLatitude: String, $endLongitude: String, $endAddressLine1: String, $endAddressLine2: String, $endCity: String, $endState: String, $endPostalCode: String, $endCountry: String, $description: String, $notes: String, $deductionAmount: String!, $autoTracked: Boolean!, $reviewState: Trips_Trip_TripReviewStateInput!, $distanceValue: String!, $distanceUnit: Trips_Trip_DistanceUnitInput, $vehicleId: String,$vehicleDescription: String, $vehicleType: Trips_Vehicle_VehicleTypeInput, $businessMiles: String) {
+  createTrips_Trip(input: {
+    clientMutationId: $clientMutationId
+    tripsTrip:{
+      startDateTime: {
+        dateTime: $startDateTime
+      }
+      endDateTime: {
+        dateTime: $endDateTime
+      }
+      startAddress: {
+        geoLocation:{
+          latitude: $startLatitude,
+          longitude: $startLongitude
+        }
+        addressComponents: [
+        {
+          name: "address_line_1",
+          value: $startAddressLine1
+        },
+        {
+          name: "address_line_2",
+          value: $startAddressLine2
+        },
+        {
+          name: "city",
+          value: $startCity
+        },
+        {
+          name: "state",
+          value: $startState
+        },
+        {
+          name: "postal_code",
+          value: $startPostalCode
+        },
+        {
+          name: "country",
+          value: $startCountry
+        }]
+      }
+      endAddress: {
+        geoLocation: {
+          latitude: $endLatitude,
+          longitude: $endLongitude
+        }
+        addressComponents: [
+        {
+          name: "address_line_1",
+          value: $endAddressLine1
+        },
+        {
+          name: "address_line_2",
+          value: $endAddressLine2
+        },
+        {
+          name: "city",
+          value: $endCity
+        },
+        {
+          name: "state",
+          value: $endState
+        },
+        {
+          name: "postal_code",
+          value: $endPostalCode
+        },
+        {
+          name: "country",
+          value: $endCountry
+        }]
+      }
+      distance: {
+        value: $distanceValue,
+        unit: $distanceUnit
+      }
+      vehicle: {
+        id: $vehicleId,
+        type: $vehicleType,
+        description: $vehicleDescription,
+        businessMiles: $businessMiles
+      }
+      description: $description
+      notes: $notes
+      taxDeductionAmount: $deductionAmount
+      autoTracked: $autoTracked
+      reviewState: $reviewState
+    }
+  }) {
+    tripsTripEdge {
+      node {
+        id
+        description
+        startDateTime {
+          dateTime
+        }
+        endDateTime {
+          dateTime
+        }
+        startAddress {
+          geoLocation {
+            latitude
+            longitude
+          }
+          addressComponents {
+            name
+            value
+          }
+        }
+        endAddress {
+          geoLocation {
+            latitude
+            longitude
+          }
+          addressComponents {
+            name
+            value
+          }
+        }
+        distance {
+          value
+          unit
+        }
+        vehicle {
+          id
+          type
+          description
+          businessMiles
+        }
+        description
+        notes
+        taxDeductionAmount
+        autoTracked
+        reviewState
+      }
+    }
+  }
+}

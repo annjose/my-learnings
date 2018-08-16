@@ -1,0 +1,33 @@
+# This query is temporary until the v4 implementation of companyInfo is done
+query GetCompanyInfoFromSettings {
+    company {
+      settings {
+        id
+        qboAppData {
+          companyInfoAppData {
+            entityVersion
+            companyName
+            govtUID #business id?
+            companyLogoURL
+            companyEmail
+            companyPhone
+            companyAddress {
+              addressComponents {
+                name
+                value
+              }
+            }
+            regionTaxOfficeName #subdivision?
+            taxIdentifierId
+            taxIdentifierType
+            taxIdentifierValue
+          }
+        }
+        localizationPrefs{
+          region
+          language
+          regionCode
+        }
+      }
+    }
+}

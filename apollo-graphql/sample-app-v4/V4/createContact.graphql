@@ -1,0 +1,74 @@
+mutation CreateContact($clientMutationId: String!, $displayName: String!,$email: String, $phone: String,
+$address: String) {
+  createNetwork_Contact(input: {
+    clientMutationId: $clientMutationId
+    networkContact: {
+      displayName: $displayName
+      type: PERSON
+      contactMethods: [
+        {
+          primary: true
+          labels: [BILLING]
+          emails: [
+            {
+              primary: true
+              emailAddress: $email
+            }
+          ]
+          telephones: [
+            {
+              primary: true
+              number: $phone
+              telephoneType: MOBILE
+            }
+          ]
+          addresses :{
+            primary:true
+            freeFormAddressLine: $address
+          }
+        }
+      ]
+      profiles:{
+        customer: {
+        }
+      }
+    }
+  }) {
+    networkContactEdge {
+      node {
+         id
+          entityVersion
+          displayName
+          person {
+            givenName
+            familyName
+          }
+          contactMethods {
+            labels
+            emails {
+              primary
+              emailAddress
+              active
+            }
+            telephones {
+              extension
+              primary
+              active
+              number
+            }
+            addresses {
+              freeFormAddressLine
+              addressFormatFormula
+              primary
+              active
+              formattedAddress
+              addressComponents {
+                name
+                value
+              }
+            }
+          }
+      }
+    }
+  }
+}

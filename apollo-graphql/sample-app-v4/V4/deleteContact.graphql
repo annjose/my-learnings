@@ -1,0 +1,16 @@
+mutation DeleteContact($id: String!, $clientMutationId: String!, $entityVersion: String!) {
+  updateNetwork_Contact(input: {clientMutationId: $clientMutationId, 
+    networkContact: {id: $id, 
+      entityVersion: $entityVersion, 
+      deleted: true,
+      profiles: {
+        customer: {}
+      }
+    }}) {
+    networkContact {
+      id
+      entityVersion
+      deleted
+    }
+  }
+}

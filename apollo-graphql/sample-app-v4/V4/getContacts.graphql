@@ -1,0 +1,39 @@
+query GetContacts {
+  company {
+    contacts {
+      edges {
+        node {
+          id
+          entityVersion
+          displayName
+          contactMethods {
+            primary
+            active
+            emails {
+              primary
+              emailAddress
+              active
+            }
+            telephones {
+              extension
+              primary
+              active
+              number
+            }
+            addresses {
+              freeFormAddressLine
+              addressFormatFormula
+              primary
+              active
+              formattedAddress
+              addressComponents {
+                name
+                value
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

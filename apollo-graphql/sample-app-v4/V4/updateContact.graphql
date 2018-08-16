@@ -1,0 +1,63 @@
+mutation UpdateContact($id: String!, $clientMutationId: String!, $entityVersion: String!,
+                       $displayName: String!, $email: String, $phone: String, $address: String) {
+  updateNetwork_Contact(input: {clientMutationId: $clientMutationId, 
+    networkContact: {id: $id, 
+      entityVersion: $entityVersion, 
+      displayName: $displayName, 
+      contactMethods: [{
+        primary: true, 
+        labels: [BILLING], 
+        emails: [{
+          primary: true, 
+          emailAddress: $email
+        }], 
+        telephones: [{
+          primary: true, 
+          number: $phone, 
+          telephoneType: MOBILE
+        }], 
+        addresses: [{
+          primary: true, 
+          freeFormAddressLine: $address
+        }]
+      }], 
+      profiles: {
+        customer: {}
+      }
+    }}) {
+    networkContact {
+      id
+      entityVersion
+      displayName
+      person {
+        givenName
+        familyName
+      }
+      contactMethods {
+        labels
+        emails {
+          primary
+          emailAddress
+          active
+        }
+        telephones {
+          extension
+          primary
+          active
+          number
+        }
+        addresses {
+          freeFormAddressLine
+          addressFormatFormula
+          primary
+          active
+          formattedAddress
+          addressComponents {
+            name
+            value
+          }
+        }
+      }
+    }
+  }
+}

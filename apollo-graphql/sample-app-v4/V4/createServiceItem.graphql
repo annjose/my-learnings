@@ -1,0 +1,20 @@
+mutation CreateServiceItem($clientMutationId: String!, $itemName: String!, $salesPrice: String!, $salesDesc: String) {
+  createItems_ServiceItem(input: {
+    clientMutationId: $clientMutationId,
+    itemsServiceItem: {
+      name: $itemName
+      salesDesc: $salesDesc
+      salesPrice: $salesPrice
+    }
+  }) {
+    itemsServiceItemEdge {
+      node {
+        id
+        entityVersion
+        name
+        salesDesc
+        salesPrice
+      }
+    }
+  }
+}
