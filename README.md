@@ -5,7 +5,7 @@ Welcome to My Learnings github repo where I share the sample projects that I fou
 ### iOS Topics
 * [What's New in Swift 4.2](https://github.com/annjose/my-learnings/tree/master/Swift4.2)
 * [Apollo GraphQL](https://github.com/annjose/my-learnings/tree/master/apollo-graphql)
-* [3D Touch](https://github.com/annjose/my-learnings/tree/master/3D-Touch)
+* [Deep Linking & 3D Touch](https://github.com/annjose/my-learnings/tree/master/DeepLinking3DTouch)
 * [MVVM UI Architecture](https://github.com/annjose/my-learnings/tree/master/mvvm-ios)
 
 ### Other Mobile Frameworks
