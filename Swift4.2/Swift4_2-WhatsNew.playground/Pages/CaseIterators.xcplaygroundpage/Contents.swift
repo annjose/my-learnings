@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 import Foundation
 
 enum Season: String, CaseIterable {
@@ -17,3 +19,5 @@ for (index, season) in allSeasons.enumerated() {
 for (index, season) in Season.allCases.enumerated() {
     print ("[\(index)]: \(season.rawValue.capitalized)")
 }
+
+//: [Next](@next)

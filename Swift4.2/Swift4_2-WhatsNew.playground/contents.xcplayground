@@ -4,5 +4,8 @@
         <page name='Random Number Generation'/>
         <page name='Dynamic Member Lookup'/>
         <page name='CaseIterators'/>
+        <page name='Sequence Enhancements'/>
+        <page name='ConditionalConformance'/>
+        <page name='Misc'/>
     </pages>
 </playground>
