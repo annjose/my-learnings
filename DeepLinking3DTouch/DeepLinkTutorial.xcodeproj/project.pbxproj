@@ -17,6 +17,7 @@
 		507A04DD219A17A800117D8C /* DeepLinkUrlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04DC219A17A800117D8C /* DeepLinkUrlParser.swift */; };
 		507A04DF219A17EB00117D8C /* DeepLinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04DE219A17EB00117D8C /* DeepLinkNavigator.swift */; };
 		507A04E1219A219D00117D8C /* DeepLinkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04E0219A219D00117D8C /* DeepLinkManagerTests.swift */; };
+		507A04E3219A25DB00117D8C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04E2219A25DB00117D8C /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		507A04DC219A17A800117D8C /* DeepLinkUrlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkUrlParser.swift; sourceTree = "<group>"; };
 		507A04DE219A17EB00117D8C /* DeepLinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkNavigator.swift; sourceTree = "<group>"; };
 		507A04E0219A219D00117D8C /* DeepLinkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManagerTests.swift; sourceTree = "<group>"; };
+		507A04E2219A25DB00117D8C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				507A04642199E09100117D8C /* Main.storyboard */,
 				507A043F2199DDCC00117D8C /* LaunchScreen.storyboard */,
 				507A04422199DDCC00117D8C /* Info.plist */,
+				507A04E2219A25DB00117D8C /* main.swift */,
 			);
 			path = DeepLinkTutorial;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				507A04A12199E5EE00117D8C /* DeepLinkManager.swift in Sources */,
 				507A04392199DDCA00117D8C /* ViewController.swift in Sources */,
+				507A04E3219A25DB00117D8C /* main.swift in Sources */,
 				507A04DD219A17A800117D8C /* DeepLinkUrlParser.swift in Sources */,
 				507A04372199DDCA00117D8C /* AppDelegate.swift in Sources */,
 				507A04DF219A17EB00117D8C /* DeepLinkNavigator.swift in Sources */,
