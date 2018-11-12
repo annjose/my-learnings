@@ -1,6 +1,6 @@
 # My Learnings
 
-Welcome to My Learnings github repo where I share the sample projects and code that I write while learning something new through blogs, articles or tutorials. I maintain this code in a public repo so that everyone can learn form it. Enjoy! If you find any errors or have suggestions for improvements, please submit an [issue](https://github.com/annjose/my-learnings/issues).
+Welcome to My Learnings github repo where I share the sample projects that I found and used while learning a new technology and the code I wrote to understand it better. I maintain this code here so that I can refer to it anytime and others may also find it useful. If you find any errors or have suggestions for improvements, please submit an [issue](https://github.com/annjose/my-learnings/issues).
 
 ### iOS Topics
 * [What's New in Swift 4.2](https://github.com/annjose/my-learnings/tree/master/Swift4.2)
