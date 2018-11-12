@@ -11,9 +11,12 @@
 		507A04392199DDCA00117D8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04382199DDCA00117D8C /* ViewController.swift */; };
 		507A043E2199DDCC00117D8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507A043D2199DDCC00117D8C /* Assets.xcassets */; };
 		507A04412199DDCC00117D8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507A043F2199DDCC00117D8C /* LaunchScreen.storyboard */; };
-		507A044C2199DDCC00117D8C /* DeepLinkTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A044B2199DDCC00117D8C /* DeepLinkTutorialTests.swift */; };
 		507A04572199DDCC00117D8C /* DeepLinkTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04562199DDCC00117D8C /* DeepLinkTutorialUITests.swift */; };
 		507A04652199E09100117D8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507A04642199E09100117D8C /* Main.storyboard */; };
+		507A04A12199E5EE00117D8C /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04A02199E5EE00117D8C /* DeepLinkManager.swift */; };
+		507A04DD219A17A800117D8C /* DeepLinkUrlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04DC219A17A800117D8C /* DeepLinkUrlParser.swift */; };
+		507A04DF219A17EB00117D8C /* DeepLinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04DE219A17EB00117D8C /* DeepLinkNavigator.swift */; };
+		507A04E1219A219D00117D8C /* DeepLinkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A04E0219A219D00117D8C /* DeepLinkManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,12 +44,15 @@
 		507A04402199DDCC00117D8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		507A04422199DDCC00117D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507A04472199DDCC00117D8C /* DeepLinkTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepLinkTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		507A044B2199DDCC00117D8C /* DeepLinkTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkTutorialTests.swift; sourceTree = "<group>"; };
 		507A044D2199DDCC00117D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507A04522199DDCC00117D8C /* DeepLinkTutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepLinkTutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		507A04562199DDCC00117D8C /* DeepLinkTutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkTutorialUITests.swift; sourceTree = "<group>"; };
 		507A04582199DDCC00117D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507A04642199E09100117D8C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		507A04A02199E5EE00117D8C /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
+		507A04DC219A17A800117D8C /* DeepLinkUrlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkUrlParser.swift; sourceTree = "<group>"; };
+		507A04DE219A17EB00117D8C /* DeepLinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkNavigator.swift; sourceTree = "<group>"; };
+		507A04E0219A219D00117D8C /* DeepLinkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				507A04362199DDCA00117D8C /* AppDelegate.swift */,
 				507A04382199DDCA00117D8C /* ViewController.swift */,
+				507A04A02199E5EE00117D8C /* DeepLinkManager.swift */,
+				507A04DE219A17EB00117D8C /* DeepLinkNavigator.swift */,
+				507A04DC219A17A800117D8C /* DeepLinkUrlParser.swift */,
 				507A043D2199DDCC00117D8C /* Assets.xcassets */,
 				507A04642199E09100117D8C /* Main.storyboard */,
 				507A043F2199DDCC00117D8C /* LaunchScreen.storyboard */,
@@ -110,7 +119,7 @@
 		507A044A2199DDCC00117D8C /* DeepLinkTutorialTests */ = {
 			isa = PBXGroup;
 			children = (
-				507A044B2199DDCC00117D8C /* DeepLinkTutorialTests.swift */,
+				507A04E0219A219D00117D8C /* DeepLinkManagerTests.swift */,
 				507A044D2199DDCC00117D8C /* Info.plist */,
 			);
 			path = DeepLinkTutorialTests;
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507A04A12199E5EE00117D8C /* DeepLinkManager.swift in Sources */,
 				507A04392199DDCA00117D8C /* ViewController.swift in Sources */,
+				507A04DD219A17A800117D8C /* DeepLinkUrlParser.swift in Sources */,
 				507A04372199DDCA00117D8C /* AppDelegate.swift in Sources */,
+				507A04DF219A17EB00117D8C /* DeepLinkNavigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507A044C2199DDCC00117D8C /* DeepLinkTutorialTests.swift in Sources */,
+				507A04E1219A219D00117D8C /* DeepLinkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

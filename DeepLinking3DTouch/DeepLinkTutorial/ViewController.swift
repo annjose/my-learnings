@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     var currentProfileType = ProfileType.guest
     
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,13 +27,14 @@ class ViewController: UIViewController {
     }
 
     private func configureFor(profileType: ProfileType) {
-        self.title = "Hello \(profileType.rawValue.capitalized)!"
+        let welcomeMessage = "Hello \(profileType.rawValue.capitalized)!"
+        self.title = welcomeMessage
+        self.welcomeLabel.text = welcomeMessage
     }
     
     @IBAction func didPressSwitchProfileButton(_ sender: Any) {
         currentProfileType = currentProfileType == .guest ? .host : .guest
         configureFor(profileType: currentProfileType)
     }
-
 }
 

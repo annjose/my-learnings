@@ -35,32 +35,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUm-D8-6GB">
-                                <rect key="frame" x="112.5" y="345.5" width="150" height="40"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <rect key="frame" x="117" y="347.5" width="141" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="Switch Profile">
-                                    <color key="titleColor" red="0.92549020049999997" green="0.23529411850000001" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressSwitchProfileButton:" destination="wkW-fv-9aD" eventType="touchUpInside" id="Y5v-Za-IRy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Notice the change in title bar)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-fk-sdJ">
-                                <rect key="frame" x="83" y="386.5" width="209" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.55294117649999996" green="0.56470588239999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Hello&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-fk-sdJ">
+                                <rect key="frame" x="155.5" y="286" width="64" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Link Target App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oE-Qe-7ko">
+                                <rect key="frame" x="75" y="160" width="225.5" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.605300646" green="0.8125307222" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="mdg-fk-sdJ" firstAttribute="top" secondItem="xUm-D8-6GB" secondAttribute="bottom" constant="1" id="PXK-F9-HMk"/>
+                            <constraint firstItem="xUm-D8-6GB" firstAttribute="top" secondItem="mdg-fk-sdJ" secondAttribute="bottom" constant="40" id="PXK-F9-HMk"/>
+                            <constraint firstItem="4oE-Qe-7ko" firstAttribute="centerX" secondItem="7eC-6g-exo" secondAttribute="centerX" id="WLw-GH-ywe"/>
+                            <constraint firstItem="4oE-Qe-7ko" firstAttribute="top" secondItem="7eC-6g-exo" secondAttribute="top" constant="96" id="YJJ-Mk-Kjr"/>
                             <constraint firstItem="xUm-D8-6GB" firstAttribute="centerX" secondItem="7eC-6g-exo" secondAttribute="centerX" id="iMX-ZE-zpn"/>
-                            <constraint firstItem="xUm-D8-6GB" firstAttribute="centerY" secondItem="7eC-6g-exo" secondAttribute="centerY" id="tiw-cl-Ahk"/>
                             <constraint firstItem="mdg-fk-sdJ" firstAttribute="centerX" secondItem="7eC-6g-exo" secondAttribute="centerX" id="vJf-wI-3ie"/>
+                            <constraint firstItem="mdg-fk-sdJ" firstAttribute="top" secondItem="4oE-Qe-7ko" secondAttribute="bottom" constant="100" id="yTR-xo-474"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7eC-6g-exo"/>
                     </view>
                     <navigationItem key="navigationItem" id="SHU-K4-YaH"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="mdg-fk-sdJ" id="zJt-Kt-kUC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do4-be-Vkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

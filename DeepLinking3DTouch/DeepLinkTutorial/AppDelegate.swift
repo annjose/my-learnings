@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let deeplinkManager = DeepLinkManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -35,8 +36,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // Whenever application come to foreground, check if this is a deep link and handle it if yes
+        deeplinkManager.handlePendingDeepLinkIfAny()
     }
 
+    func application(_ app: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        return deeplinkManager.handleUrlDeepLink(url: url)
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        
+        // If this app supports Universal Links, then it will respond to deep links triggered from Safari
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if let url = userActivity.webpageURL {
+                return deeplinkManager.handleUrlDeepLink(url: url)
+
+            }
+        }
+        return false
+    }
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
