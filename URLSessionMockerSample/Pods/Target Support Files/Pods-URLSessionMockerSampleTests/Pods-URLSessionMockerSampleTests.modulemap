@@ -1,0 +1,6 @@
+module Pods_URLSessionMockerSampleTests {
+  umbrella header "Pods-URLSessionMockerSampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

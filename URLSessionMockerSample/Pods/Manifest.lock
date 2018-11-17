@@ -1,0 +1,16 @@
+PODS:
+  - Mocker (1.2.1)
+
+DEPENDENCIES:
+  - Mocker
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Mocker
+
+SPEC CHECKSUMS:
+  Mocker: 5dda9a0f863cfad5b333fa9543d86a263362fba4
+
+PODFILE CHECKSUM: e5fccba9a1f2f9c2d6bebd262d0185d0d3584dbf
+
+COCOAPODS: 1.5.3
