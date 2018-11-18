@@ -16,7 +16,7 @@
 		50D014EE21A09451000CA4C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D014EC21A09451000CA4C8 /* LaunchScreen.storyboard */; };
 		50D014F921A09451000CA4C8 /* URLSessionMockerSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D014F821A09451000CA4C8 /* URLSessionMockerSampleTests.swift */; };
 		50D0150421A09451000CA4C8 /* URLSessionMockerSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0150321A09451000CA4C8 /* URLSessionMockerSampleUITests.swift */; };
-		50D0151221A096ED000CA4C8 /* sample-api-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D0151121A096ED000CA4C8 /* sample-api-response.json */; };
+		50D0155B21A0F232000CA4C8 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 50D0155A21A0F232000CA4C8 /* Resources */; };
 		51AB2740DFA854BD6359E5E7 /* libPods-URLSessionMockerSampleUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D011AF0DD84B4DCB181884 /* libPods-URLSessionMockerSampleUITests.a */; };
 		95A536966240442F4AF8E594 /* Pods_URLSessionMockerSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBE5D825E9FC1B6CB901E7C /* Pods_URLSessionMockerSample.framework */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 		50D014FF21A09451000CA4C8 /* URLSessionMockerSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLSessionMockerSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D0150321A09451000CA4C8 /* URLSessionMockerSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMockerSampleUITests.swift; sourceTree = "<group>"; };
 		50D0150521A09451000CA4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50D0151121A096ED000CA4C8 /* sample-api-response.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = "sample-api-response.json"; sourceTree = "<group>"; };
+		50D0155A21A0F232000CA4C8 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		73134D33189AFB7D180B9D2A /* Pods-URLSessionMockerSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLSessionMockerSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-URLSessionMockerSampleTests/Pods-URLSessionMockerSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7CC6F949281E42541A098E59 /* Pods_URLSessionMockerSample_URLSessionMockerSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLSessionMockerSample_URLSessionMockerSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		811901A8DE9104EFB6D0B321 /* Pods-URLSessionMockerSample-URLSessionMockerSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLSessionMockerSample-URLSessionMockerSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-URLSessionMockerSample-URLSessionMockerSampleTests/Pods-URLSessionMockerSample-URLSessionMockerSampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,9 +149,9 @@
 		50D014F721A09451000CA4C8 /* URLSessionMockerSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				50D0155A21A0F232000CA4C8 /* Resources */,
 				50D014F821A09451000CA4C8 /* URLSessionMockerSampleTests.swift */,
 				50D014FA21A09451000CA4C8 /* Info.plist */,
-				50D0151121A096ED000CA4C8 /* sample-api-response.json */,
 			);
 			path = URLSessionMockerSampleTests;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50D0151221A096ED000CA4C8 /* sample-api-response.json in Resources */,
+				50D0155B21A0F232000CA4C8 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
