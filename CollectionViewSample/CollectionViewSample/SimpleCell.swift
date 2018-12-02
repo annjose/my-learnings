@@ -16,7 +16,8 @@ class SimpleCell: UICollectionViewCell {
     var viewModel: SimpleCellViewModel = .init()
     
     var textLabel: UILabel!
-    
+    var footerLabel: UILabel!
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("not implemented")
     }
@@ -32,29 +33,56 @@ class SimpleCell: UICollectionViewCell {
         
         viewModel.configure(item: item)
         
-        self.contentView.backgroundColor = viewModel.backgroundColor
+        self.textLabel.text = viewModel.mainText
+        self.textLabel.textColor = viewModel.mainTextColor
         
-        self.textLabel.text = viewModel.itemText
-        self.textLabel.textColor = viewModel.itemTextColor
+        self.footerLabel.text = viewModel.footerText
     }
 
     func setupContentView() {
         
-        self.contentView.backgroundColor = .white
+        self.contentView.backgroundColor = viewModel.backgroundColor
         
-        self.contentView.layer.cornerRadius = 10.0
-        
+        let topView = UIView()
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        topView.backgroundColor = viewModel.topViewBackgroundColor
+        topView.layer.cornerRadius = 10.0
+
         let textLabel = UILabel()
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.textAlignment = .left
         textLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
-        self.contentView.addSubview(textLabel)
+        topView.addSubview(textLabel)
+        
+        self.contentView.addSubview(topView)
+        
+        let footerLabel = UILabel()
+        footerLabel.translatesAutoresizingMaskIntoConstraints = false
+        footerLabel.textColor = .gray
+        footerLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
+        
+        self.contentView.addSubview(footerLabel)
         
         NSLayoutConstraint.activate([
-            textLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15),
-            textLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -15)
+            
+            // Pin the top view to content view's top, left and right
+            topView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            topView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            topView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            // Pin the textLabel to the bottom of topView
+            textLabel.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 16),
+            textLabel.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
+            textLabel.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -10),
+
+            // Pin the footer label to content view's left, right and bottom
+            footerLabel.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 8),
+            footerLabel.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 8),
+            footerLabel.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
+            footerLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
         
         self.textLabel = textLabel
+        self.footerLabel = footerLabel
     }
 }

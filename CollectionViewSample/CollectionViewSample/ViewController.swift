@@ -87,13 +87,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         let totalPadding = CGFloat(cellPadding * 3)
         let width = CGFloat( (viewWidth - totalPadding) / 2.0)
 
-        return CGSize(width: width, height: 150)
+        return CGSize(width: width, height: 200)
     }
     
     // determines how far inside are the outer set of items within the section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 10, left: cellPadding, bottom: 10, right: cellPadding)
+        return UIEdgeInsets(top: cellPadding, left: cellPadding, bottom: cellPadding, right: cellPadding)
     }
     
     // determines the space between rows in a section
