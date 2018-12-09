@@ -8,12 +8,19 @@
 
 import UIKit
 
+struct ItemViewModel {
+    let title: String
+    let footNote: String
+}
+
 class ViewController: UIViewController {
 
     private weak var collectionView: UICollectionView!
     
-    let items: [Int] = Array(1...8)
+    // let items: [Int] = Array(1...8)
+    let items: [String] = ["Review 23 transactions", "Review 13 trips", "Confirm your tax profile", "Confirm your vehicle info", "Add business assets", "Add missing transactions"]
     
+    // let items: [Item]
     private let cellPadding = CGFloat(16)
     
     override func viewDidLoad() {
@@ -87,7 +94,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         let totalPadding = CGFloat(cellPadding * 3)
         let width = CGFloat( (viewWidth - totalPadding) / 2.0)
 
-        return CGSize(width: width, height: 200)
+        return CGSize(width: width, height: 180)
     }
     
     // determines how far inside are the outer set of items within the section

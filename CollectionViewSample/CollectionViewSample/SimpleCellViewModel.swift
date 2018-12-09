@@ -11,7 +11,7 @@ import UIKit
 
 class SimpleCellViewModel {
     
-    private var item: Int = 0
+    private var item: String = ""
     
     let backgroundColor: UIColor
     
@@ -23,22 +23,21 @@ class SimpleCellViewModel {
     init() {
         self.backgroundColor = .white
         
-        // self.topViewBackgroundColor = UIColor(red: 0.00, green: 0.76, blue: 0.75, alpha: 1.0)
         self.topViewBackgroundColor = UIColor(red:0.13, green:0.67, blue:0.96, alpha:1.0)
         self.mainTextColor = UIColor.white
         
         self.footerTextColor = UIColor.white
     }
     
-    func configure(item: Int) {
+    func configure(item: String) {
         self.item = item
     }
     
     var mainText: String {
-        return "Item \(item)"
+        return "\(item)"
     }
     
     var footerText: String {
-        return "simple footnote"
+        return "$133.21 in potential deds"
     }
 }
