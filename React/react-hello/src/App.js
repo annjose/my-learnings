@@ -1,23 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Hello from './hello';
+import Button from './Button';
+import {Display, MyElement} from './Display';
 
 function App() {
+
+  const [counter, setCounter] = React.useState(5);
+  const handleClick = () => setCounter(counter * 2);
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello React World!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Hello />
+        <p/>
+
+        <Button className="App-button" onClickFunction={handleClick}/>
+        <Display message={counter}></Display>
+        <p/>
+        <MyElement />
+
       </header>
     </div>
   );
