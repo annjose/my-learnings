@@ -42,8 +42,8 @@ console.log('doc2......')
 display(doc2)
 
 console.log('finalDoc....')
-let finalDoc = Automerge.merge(doc1, doc2) // doc1 wins conflict resolve
-//let finalDoc = Automerge.merge(doc2, doc1) // doc2 wins conflict resolve
+//let finalDoc = Automerge.merge(doc1, doc2) // doc1 is applied first, then doc2
+let finalDoc = Automerge.merge(doc2, doc1) // doc2 is applied first, then doc1
 display(finalDoc)
 console.log(Automerge.getHistory(finalDoc).map(state => [state.change.message, state.snapshot.todos.length]))
 
